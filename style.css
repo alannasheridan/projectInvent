@@ -1,0 +1,33 @@
+:root {
+    --black: #514A44;
+    --green: #98B092;
+    --blue1: #698aa4;
+    --blue2: #206580;
+    --blue3: #234058;
+    --orange: #E7965F;
+    --red1: #99324E;
+    --red2: #72353F;
+    --tan: #D9C6AF;
+
+
+    --main-font: "IBM Plex Sans", serif;
+    --heading-font: "Recursive", serif;
+    --standard-width: 1200px;
+}
+
+* {
+    box-sizing: border-box;   
+    font-size: 16px;
+    background-color: var(--blue1);
+    transition: all 0.3s ease-in-out;
+}
+
+body{
+    font-family: var(--main-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+    /* padding: var(--spacing-sm) 0 0 0; */
+}
