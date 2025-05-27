@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+    background-color: #d0e8f2;
+    padding: 20px;
+    text-align: center;
+}
+h1 {
+    color: #003f5c;
+}
+div {
+    margin: 15px auto;
+}
+input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+button {
+    padding: 8px 12px;
+    margin-left: 10px;
+    background-color: #003f5c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fidget Cube Sound Config</title>
+    <link rel="stylesheet" href="new.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>🔊 Fidget Cube Sound Config</h1>
+
+    {% for button, sound in sounds.items() %}
+    <div>
+        <label>{{ button }}</label>
+        <select onchange="updateSound('{{ button }}', this.value)">
+            {% for file in available_sounds %}
+                <option value="{{ file }}" {% if file == sound %}selected{% endif %}>{{ file }}</option>
+            {% endfor %}
+        </select>
+        <button onclick="playSound('{{ sound }}')">▶️</button>
+    </div>
+    {% endfor %}
+
+    <script>
+        function playSound(sound) {
+            fetch(`/play?sound=${sound}`);
+        }
+
+        function updateSound(button, sound) {
+            fetch("/update", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ button, sound })
+            });
+        }
+    </script>
+</body>
+</html>

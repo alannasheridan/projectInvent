@@ -39,9 +39,7 @@ body{
     font-family: var(--main-font), sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
-    align-items: center;
+    padding: 0 50px 0 50px;
     /* padding: var(--spacing-sm) 0 0 0; */
 }
 
@@ -58,12 +56,11 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: var(--heading-font), sans-serif;
 }
 
-header h4 {
+header img {
   position: absolute;
-  left: 10%;
+  /* left: 10%; */
   bottom: 1rem;
-  font-size: 1.6rem;
-  color: #fff;
+  width: 100px;
 }
 
 /* Intro screen */
@@ -85,6 +82,10 @@ header h4 {
   transform: translate(-50%, -50%);
   color: #ffffff;
   background-color: var(--blue3);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+
 }
 
 .letter {
@@ -130,11 +131,17 @@ header h4 {
   .letter {
     font-size: 1.4rem;
   }
+  .letter img {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1000px) {
   .letter {
     font-size: 2rem;
+  }
+  .letter img {
+    width: 100%;
   }
 }
 
@@ -145,3 +152,4 @@ header h4 {
     }
 
 }
+
