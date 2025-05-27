@@ -4,15 +4,28 @@
     --blue1: #698aa4;
     --blue2: #206580;
     --blue3: #234058;
+    --blue4: #92b6d0;
     --orange: #E7965F;
     --red1: #99324E;
     --red2: #72353F;
-    --tan: #D9C6AF;
+    --tan: #f6f3df;
 
 
-    --main-font: "IBM Plex Sans", serif;
-    --heading-font: "Recursive", serif;
+    /* --main-font: "IBM Plex Sans", serif;
+    --heading-font: "Recursive", serif; */
+    --main-font: "small";
+    --heading-font: "big";
     --standard-width: 1200px;
+}
+
+@font-face {
+  font-family: "small";
+  src: url("fonts/garet/Garet-Book.woff") format('woff');
+}
+
+@font-face {
+  font-family: "big";
+  src: url("fonts/garet/Garet-Heavy.woff") format('woff');
 }
 
 * {
@@ -23,7 +36,7 @@
 }
 
 body{
-    font-family: var(--main-font);
+    font-family: var(--main-font), sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,6 +52,10 @@ header {
   top: 0;
   width: 1005;
   height: 80px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: var(--heading-font), sans-serif;
 }
 
 header h4 {
@@ -76,6 +93,10 @@ header h4 {
   bottom: -20px;
   opacity: 0;
   font-size: 4rem;
+  background-color: var(--blue3);
+}
+
+.welcome-header .letter img {
   background-color: var(--blue3);
 }
 
