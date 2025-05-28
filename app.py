@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import json
 import os
-from gpio_listener import start_gpio_thread  # <-- NEW
+# from gpio_listener import start_gpio_thread 
 
 app = Flask(__name__)
 
@@ -12,7 +12,7 @@ with open("sounds.json") as f:
 @app.route("/")
 def index():
     available_sounds = os.listdir("sounds")  # <-- NEW
-    return render_template("index.html", sounds=sound_map, available_sounds=available_sounds)  # <-- UPDATED
+    return render_template("new.html", sounds=sound_map, available_sounds=available_sounds)  # <-- UPDATED
 
 @app.route("/play", methods=["GET"])
 def play_sound():
@@ -31,5 +31,12 @@ def update_sound():
     return jsonify(success=True)
 
 if __name__ == "__main__":
-    start_gpio_thread()  # <-- NEW
+    import platform
+
+    if platform.system() == "Linux":
+        from gpio_listener import start_gpio_thread
+        start_gpio_thread(play_mapped_sound)
+    else:
+        print("Running on non-Raspberry Pi system — GPIO disabled.")
+
     app.run(debug=True)
