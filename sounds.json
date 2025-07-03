@@ -1,4 +1,10 @@
 {
-    "button1": "whoosh.mp3",
-    "button2": "bubble.mp3"
+    "button 1": "bubble.mp3",
+    "button 2": "alert.wav",
+    "button 3": "bubble.mp3",
+    "button 4": "pop.mp3",
+    "toggle 1": "whoosh.mp3",
+    "toggle 2": "ping.wav",
+    "toggle 3": "camera.wav",
+    "switch": "alert.wav"
 }
